@@ -72,17 +72,18 @@ const App = () => {
             <div className="relative mb-4 flex w-full flex-wrap items-stretch">
               <input
                 type="search"
-                className="relative m-0 -mr-px block w-[1%] min-w-0 flex-auto rounded-1 border border-solid border-neutral-600 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:text-neutral-200 dark:placeholder:text-neutral-200"
+                className="relative m-0 -mr-px block w-[1%] min-w-0 flex-auto rounded border border-solid border-white-600 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-white-700 outline-none transition duration-300 ease-in-out focus:border-primary focus:text-white-700 focus:shadow-te-primary focus:outline-none dark:text-neutral-200 dark:placeholder:text-neutral-200 text-white"
                 placeholder="Search a word"
                 aria-label="Search"
                 aria-describedby="button-addon1"
+                
                 onChange={(e) => {
                   setWord(e.target.value)
                 }}
               />
               
             </div>
-            <button style={{fontSize: "2.5rem", marginTop: "3rem"}} onClick={() => {
+            <button style={{fontSize: "2.5rem", marginTop: "3rem",color:"white"}} onClick={() => {
                 soundPlay(src)
                 setTimeout(() => {
                 }, 800);
@@ -100,31 +101,34 @@ const App = () => {
       
 
 
-        <div className='defns container' style={{
-        border: "2px solid white",
-        borderRadius: "10px",
-        margin:"5px",
-        marginBottom: "2rem",
-        padding: "2rem"}}>
+        <div className='defns container grid place-items-start' style={{
+          border: "2px solid white", 
+          color: "white",
+          borderRadius: "10px",
+          margin: "5px 5px 2rem",
+          padding: "2rem",
+        }}>
           <Defs defs={def} />
         </div>
 
-        <div className="container" style={{
-        border: "2px solid white",
+        <div className='defns container grid place-items-start' style={{
+        border: "2px solid white", 
+        color: "white",
         borderRadius: "10px",
-        marginBottom: "2rem",
-        margin:"5px",
-        padding: "2rem"}}>
+        margin: "5px 5px 2rem",
+        padding: "2rem",
+        
+        }}>
           {syn.map((i) => (
             <Show name={i} />
           ))}
         </div>
 
-        <div className="container" style={{
-        border: "2px solid white",
+        <div className='defns container grid place-items-start' style={{
+        border: "2px solid white", 
+        color: "white",
         borderRadius: "10px",
-        marginBottom: "2rem",
-        margin:"5px",
+        margin: "5px 5px 2rem",
         padding: "2rem"}}>
           {ant.map((i) => (
             <Show name={i} />
