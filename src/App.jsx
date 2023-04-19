@@ -58,7 +58,7 @@ const App = () => {
     getData()
     // console.log(word)
   }, [word])
-
+// please like karo
 
 
   return (
