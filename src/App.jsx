@@ -92,48 +92,35 @@ const App = () => {
           
         </div>
       </div>
-
-      <span style={{margin:"9rem", color:"white", fontSize:"1.5rem"}}>Meanings</span>
+      {/* <span style={{margin:"9rem", color:"white", fontSize:"1.5rem"}}>Meanings</span>
       <span style={{margin:"7rem 7rem", color:"white", fontSize:"1.5rem"}}>Synonyms</span>
-      <span style={{margin:"9rem", color:"white", fontSize:"1.5rem"}}>Antonyms</span>
+      <span style={{margin:"9rem", color:"white", fontSize:"1.5rem"}}>Antonyms</span> */}
 
-      <div className="results container ">
-      
-
-
-        <div className='defns container grid place-items-start' style={{
-          border: "2px solid white", 
-          color: "white",
-          borderRadius: "10px",
-          margin: "5px 5px 2rem",
-          padding: "2rem",
-        }}>
-          <Defs defs={def} />
+      <div className="results">
+        <div className='box'>
+          <span style={{fontSize:"2rem"}}>Meanings</span>
+          <div className='window'>
+            <Defs defs={def} />
+          </div>
         </div>
-
-        <div className='defns container grid place-items-start' style={{
-        border: "2px solid white", 
-        color: "white",
-        borderRadius: "10px",
-        margin: "5px 5px 2rem",
-        padding: "2rem",
+        <div className='box'>
+          <span style={{fontSize:"2rem"}}>Synonyms</span>
+          <div className='window'>
+            {syn.map((i) => (
+              <Show name={i} />
+            ))}
+          </div>
+        </div>   
         
-        }}>
-          {syn.map((i) => (
-            <Show name={i} />
-          ))}
+        <div className='box'>
+          <span style={{fontSize:"2rem"}}>Antonyms</span>
+          <div className='window' >
+            {ant.map((i) => (
+              <Show name={i} />
+            ))}
+          </div>
         </div>
-
-        <div className='defns container grid place-items-start' style={{
-        border: "2px solid white", 
-        color: "white",
-        borderRadius: "10px",
-        margin: "5px 5px 2rem",
-        padding: "2rem"}}>
-          {ant.map((i) => (
-            <Show name={i} />
-          ))}
-        </div>
+        
       </div>
 
 
